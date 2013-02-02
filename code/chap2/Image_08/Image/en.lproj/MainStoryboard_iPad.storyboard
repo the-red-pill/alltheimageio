@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <viewController id="2" customClass="GFSViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3Ad-1e-wtf">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="768" type="user" id="Gr7-LR-noB"/>
+                                    <constraint firstAttribute="height" constant="1004" type="user" id="e9i-tv-xAZ"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="yQE-ci-o1I" appends="YES" id="WiC-6G-n84"/>
+                                    <outletCollection property="gestureRecognizers" destination="sUi-m7-Sa9" appends="YES" id="eR1-oH-v6H"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="3Ad-1e-wtf" secondAttribute="centerY" type="user" id="L4m-vx-sWP"/>
+                            <constraint firstAttribute="centerX" secondItem="3Ad-1e-wtf" secondAttribute="centerX" type="user" id="OoY-Xt-8s7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animateGR" destination="yQE-ci-o1I" id="63l-KB-K9h"/>
+                        <outlet property="imageView" destination="3Ad-1e-wtf" id="J6x-X6-hZU"/>
+                        <outlet property="propertiesGR" destination="sUi-m7-Sa9" id="9B1-rD-Wa5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yQE-ci-o1I" userLabel="Animate GR">
+                    <connections>
+                        <action selector="animate:" destination="2" id="vU4-I6-wSN"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="sUi-m7-Sa9" userLabel="Properties GR">
+                    <connections>
+                        <segue destination="3kh-ER-XoQ" kind="modal" identifier="ShowPropertiesSegue" modalPresentationStyle="formSheet" id="YSc-ss-6Ht"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="209" y="127"/>
+        </scene>
+        <!--Properties View Controller-->
+        <scene sceneID="sXn-Mc-Oii">
+            <objects>
+                <tableViewController storyboardIdentifier="propertiesVC" id="GXl-is-6yp" customClass="GFSPropertiesViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Buh-w3-G3M">
+                        <rect key="frame" x="0.0" y="20" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="dMf-NQ-C7K" detailTextLabel="YWM-WY-UuU" style="IBUITableViewCellStyleSubtitle" id="gen-ZE-Aek">
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMf-NQ-C7K">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWM-WY-UuU">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GXl-is-6yp" id="lcX-gV-vdn"/>
+                            <outlet property="delegate" destination="GXl-is-6yp" id="uSK-OU-E3I"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="mYs-8v-VHq">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="EJX-5B-wZt">
+                            <connections>
+                                <action selector="done:" destination="GXl-is-6yp" id="5DE-bP-5X6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MW4-xV-sul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2109" y="149"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="34X-xn-eJv">
+            <objects>
+                <navigationController id="3kh-ER-XoQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BDh-g4-Hoy">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GXl-is-6yp" kind="relationship" relationship="rootViewController" id="hrp-rB-gaH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GCn-zf-HNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1197" y="127"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="GFSPropertiesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GFSPropertiesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+            </relationships>
+        </class>
+        <class className="GFSViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GFSViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="animate:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="animateGR" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="propertiesGR" candidateClass="UITapGestureRecognizer"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
