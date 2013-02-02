@@ -16,7 +16,6 @@
 
 @implementation GFSViewController
 
-//LISTING:tapped
 - (IBAction)tapped:(UITapGestureRecognizer *)gr {
   [UIView animateWithDuration:3.0 animations:^{
     self.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
@@ -28,6 +27,5 @@
                                       }];
                    }];
 }
-//LISTING:tapped
 
 @end

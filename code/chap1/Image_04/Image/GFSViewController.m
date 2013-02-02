@@ -17,7 +17,6 @@
 
 @implementation GFSViewController
 
-//LISTING:maxDim
 - (CGFloat)maxDim {
   UIImage *image = [UIImage imageNamed:@"wwdc.png"];
   CGFloat imageAR = image.size.width / image.size.height;
@@ -37,9 +36,7 @@
   }
   return maxDim * [[UIScreen mainScreen] scale];
 }
-//LISTING:maxDim
 
-//LISTING:generate thumbnail
 - (void)viewDidLoad {
   [self.view layoutIfNeeded];
   NSURL *url = [[NSBundle mainBundle] URLForResource:@"wwdc"
@@ -59,9 +56,7 @@
   CFRelease(imgSrc);
   CGImageRelease(img);
 }
-//LISTING:generate thumbnail
 
-//LISTING:tapped
 - (IBAction)tapped:(UITapGestureRecognizer *)gr {
   [UIView animateWithDuration:3.0
                    animations:^{
@@ -74,6 +69,5 @@
                                       }];
                    }];
 }
-//LISTING:tapped
 
 @end

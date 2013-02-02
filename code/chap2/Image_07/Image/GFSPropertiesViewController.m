@@ -24,7 +24,6 @@
   [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-// LISTING: table view stuffs
 - (void)setProperties:(NSDictionary *)properties {
   _properties = [properties copy];
   self.keys = [_properties allKeys];
@@ -57,7 +56,6 @@
   }
   return cell;
 }
-// LISTING: table view stuffs
 
 #pragma mark - Table view delegate
 

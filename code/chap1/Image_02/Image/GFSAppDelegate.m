@@ -12,13 +12,11 @@
 @implementation GFSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//LISTING:malloc
   void *memory = malloc(1024 * 1024 * 128);
   char *voidMemory = (char *)memory;
   for (int i = 0; i < 1024 * 1024 * 32; i++) {
     voidMemory[i] = 'a';
   }
-//LISTING:malloc
 
   return YES;
 }
