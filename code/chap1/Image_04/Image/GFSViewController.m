@@ -47,7 +47,7 @@
   NSNumber *maxDim = [NSNumber numberWithFloat:[self maxDim]];
   NSDictionary *options = @{
   (__bridge NSString *)kCGImageSourceCreateThumbnailFromImageAlways : @YES,
-  (__bridge NSNumber *)kCGImageSourceThumbnailMaxPixelSize : maxDim
+  (__bridge NSString *)kCGImageSourceThumbnailMaxPixelSize : maxDim
   };
   CFDictionaryRef cfOptions = (__bridge CFDictionaryRef)options;
   CGImageRef img = CGImageSourceCreateThumbnailAtIndex(imgSrc, 0, cfOptions);

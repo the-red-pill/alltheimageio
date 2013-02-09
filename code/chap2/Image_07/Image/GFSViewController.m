@@ -100,7 +100,7 @@ static NSString *const kImageName = @"wwdc.png";
   NSNumber *max = [NSNumber numberWithFloat:maxDim];
   NSDictionary *options = @{
   (__bridge NSString *)kCGImageSourceCreateThumbnailFromImageAlways : @YES,
-  (__bridge NSNumber *)kCGImageSourceThumbnailMaxPixelSize : max
+  (__bridge NSString *)kCGImageSourceThumbnailMaxPixelSize : max
   };
   CFDictionaryRef cfOptions = (__bridge CFDictionaryRef)options;
   CGImageRef img = CGImageSourceCreateThumbnailAtIndex(imgSrc, 0, cfOptions);
